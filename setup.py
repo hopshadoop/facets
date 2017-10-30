@@ -12,6 +12,8 @@ from os import path
 
 here = path.abspath(path.dirname(__file__))
 
+exec(open('hopsfacets/version.py').read())
+
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
@@ -22,20 +24,22 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.2',
+    version=__version__,
 
-    description='Facets for Jupyter Notebook',
+    description='PyPi Facets for Jupyter Notebook',
     long_description=long_description,
 
     # The project's main homepage.
     url='https://github.com/hopshadoop/facets',
 
     # Author details
-    author='Alphabet/Google, Logical Clocks AB',
+    author='Google Inc., Logical Clocks AB',
     author_email='jim@logicalclocks.com',
 
     # Choose your license
     license='Apache 2.0',
+
+    download_url = 'http://snurran.sics.se/hops/hops-util-py/hopsfacets-' + __version__ + '.tar.gz',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
